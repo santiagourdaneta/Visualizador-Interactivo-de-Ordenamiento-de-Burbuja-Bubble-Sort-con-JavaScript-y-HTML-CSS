@@ -16,7 +16,7 @@ Observa cómo los elementos de una lista se comparan e **intercambian de posici�
 * **Visualización Dinámica:** Observa en tiempo real cómo las barras representan los números y cambian de color (comparando, intercambiando, ordenado) a medida que el algoritmo avanza.
 * **Controles de Usuario Intuitivos:**
     * **Control de Velocidad:** Un deslizador (`input type="range"`) permite ajustar la velocidad de la animación (`10ms` a `500ms`), ideal para un aprendizaje a tu propio ritmo.
-    * **Cantidad de Barras Personalizable:** Define el tamaño del conjunto de datos (`5` a `100` elementos) para experimentar con diferentes escenarios.
+    * **Cantidad de Barras Personalizable:** Define el tamaño del conjunto de datos (`5` a `20` elementos) para experimentar con diferentes escenarios.
     * **Botones de Control:** Inicia el ordenamiento o reinicia la visualización con nuevos datos aleatorios.
 * **Diseño Responsivo (Mobile-Friendly):** La interfaz se adapta perfectamente a diferentes tamaños de pantalla, desde monitores de escritorio hasta dispositivos móviles (smartphones y tablets), garantizando una **experiencia de usuario (UX)** óptima en cualquier dispositivo.
 * **Mensajes de Estado Claros:** Notificaciones en pantalla informan al usuario sobre el estado actual de la visualización (ej., "Ordenando...", "¡Ordenamiento Completado!").
