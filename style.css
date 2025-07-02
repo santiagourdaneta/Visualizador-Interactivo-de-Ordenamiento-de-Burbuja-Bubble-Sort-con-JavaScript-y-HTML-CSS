@@ -1,0 +1,174 @@
+/* Importar la fuente Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Usamos la fuente Roboto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #212121; /* Fondo más oscuro */
+    color: #FFFFFF; /* Letras blancas */
+    margin: 0;
+    padding: 20px; /* Padding general para que no se pegue a los bordes */
+    box-sizing: border-box; /* Incluir padding en el ancho/alto */
+}
+
+h1 {
+    color: #61DAFB;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Tamaño de fuente más grande */
+}
+
+/* Contenedores de controles */
+.controles-superiores, .controles-inferiores {
+    display: flex;
+    gap: 20px; /* Espacio entre los elementos */
+    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: wrap; /* Para que los controles se envuelvan en pantallas pequeñas */
+    justify-content: center;
+}
+
+label {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+input[type="number"], input[type="range"] {
+    background-color: #424242; /* Fondo oscuro para los inputs */
+    border: 1px solid #616161;
+    border-radius: 5px;
+    padding: 8px 10px;
+    color: #FFFFFF;
+    font-size: 1em;
+    outline: none; /* Quita el borde azul al hacer focus */
+}
+
+input[type="number"] {
+    width: 60px; /* Ancho fijo para el número de barras */
+}
+
+input[type="range"] {
+    width: 150px; /* Ancho para el deslizador */
+    /* Estilos específicos para el "pulgar" del deslizador (más complejos, omitidos por brevedad) */
+}
+
+#contenedor-barras {
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    max-width: 90vw; /* Responsividad: máximo 90% del ancho de la pantalla */
+    width: 800px; /* Ancho deseado */
+    border: 2px solid #61DAFB; /* Borde de color de acento */
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: #2D2D2D; /* Fondo del contenedor de barras ligeramente más claro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    overflow-x: auto; /* Permite scroll si hay muchas barras */
+}
+
+.barra {
+    flex-grow: 1; /* Las barras crecerán para ocupar el espacio */
+    min-width: 5px; /* Ancho mínimo para que no desaparezcan si son muchas */
+    max-width: 50px; /* Ancho máximo para que no sean gigantes si son pocas */
+    background-color: #42A5F5; /* Azul normal */
+    margin: 0 1px; /* Espacio muy pequeño entre barras para muchas */
+    transition: all 0.08s ease-out; /* Transición más rápida y suave */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    color: #FFFFFF; /* Color del número en la barra */
+    font-weight: bold;
+    font-size: 0.9em; /* Tamaño de fuente para números */
+    border-radius: 3px 3px 0 0; /* Esquinas superiores redondeadas */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+/* Colores de estado mejorados */
+.barra.comparando {
+    background-color: #FFCA28; /* Amarillo */
+}
+
+.barra.intercambiando {
+    background-color: #FF7043; /* Naranja */
+}
+
+.barra.ordenado {
+    background-color: #66BB6A; /* Verde */
+}
+
+button {
+    background-color: #1976D2; /* Azul oscuro para ordenar */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 5px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover:not(:disabled) { /* Efecto al pasar el ratón, pero no si está deshabilitado */
+    background-color: #1565C0;
+    transform: translateY(-2px); /* Pequeño movimiento al pasar el ratón */
+}
+
+button:active:not(:disabled) { /* Efecto al hacer clic */
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+button#btn-reiniciar { /* Color específico para reiniciar */
+    background-color: #9E9E9E;
+}
+
+button#btn-reiniciar:hover:not(:disabled) {
+    background-color: #757575;
+}
+
+button:disabled {
+    background-color: #424242; /* Color cuando está deshabilitado */
+    cursor: not-allowed; /* Cursor de "no permitido" */
+    box-shadow: none;
+    transform: none;
+}
+
+.mensaje {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFCA28; /* Amarillo para los mensajes */
+    min-height: 25px; /* Para que no se mueva el layout al aparecer/desaparecer */
+}
+
+/* Media Queries para responsividad (ejemplo básico) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8em;
+        text-align: center;
+    }
+    .controles-superiores, .controles-inferiores {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #contenedor-barras {
+        height: 250px;
+        width: 100%;
+        max-width: unset; /* Quita el max-width si la pantalla es muy pequeña */
+    }
+    .barra {
+        font-size: 0.7em; /* Números más pequeños en barras */
+        padding-bottom: 3px;
+    }
+    button {
+        width: 90%; /* Botones ocupan casi todo el ancho */
+        font-size: 1em;
+    }
+}

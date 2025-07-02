@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Ordenamiento de Burbuja</title>
+    <meta name="description" content="Visualizador interactivo y educativo del algoritmo de Ordenamiento de Burbuja (Bubble Sort) con JavaScript, HTML y CSS. Perfecto para aprender estructuras de datos y algoritmos de forma visual y dinámica.">
+    <meta name="keywords" content="visualizador de algoritmos, ordenamiento de burbuja, bubble sort, javascript, html, css, aprender algoritmos, estructuras de datos, programación, algoritmo visual, interactive sort">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Visualizador de Ordenamiento de Burbuja (Bubble Sort)">
+    <meta property="og:description" content="Aprende y visualiza el algoritmo Bubble Sort paso a paso con este interactivo visualizador JavaScript.">
+    <meta property="og:image" content="bubble-sort-1024x683-2.webp"> <meta property="og:url" content="https://tu_dominio.com/index.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Visualizador de Ordenamiento de Burbuja (Bubble Sort)">
+    <meta name="twitter:description" content="Aprende y visualiza el algoritmo Bubble Sort paso a paso con este interactivo visualizador JavaScript.">
+    <meta name="twitter:image" content="bubble-sort-1024x683-2.webp">
+</head>
+<body>
+    <h1>Visualizador de Ordenamiento de Burbuja</h1>
+
+    <div class="controles-superiores">
+        <label for="num-barras">Cantidad de Barras:</label>
+        <input type="number" id="num-barras" value="10" min="5" max="20">
+        
+        <label for="velocidad">Velocidad:</label>
+        <input type="range" id="velocidad" min="10" max="200" value="100">
+        <span id="velocidad-valor">100ms</span>
+    </div>
+
+    <div id="contenedor-barras">
+        </div>
+
+    <div class="controles-inferiores">
+        <button id="btn-ordenar">Ordenar Burbujas</button>
+        <button id="btn-reiniciar">Reiniciar</button>
+    </div>
+    
+    <div id="mensaje-estado" class="mensaje"></div> <script src="script.js"></script>
+</body>
+</html>
